@@ -9,5 +9,6 @@
 
 <p align='center'>
   <a href="#"><img src="https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=dark" width="350"></a>
-  <script src="https://tryhackme.com/badge/294192"></script>
+
 </p>
+ <script src="https://tryhackme.com/badge/294192"></script>
