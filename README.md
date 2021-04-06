@@ -12,5 +12,3 @@
   
 
 </p>
-<img src="https://tryhackme-badges.s3.amazonaws.com/dhakrey.png" alt="TryHackMe">
- <script src="https://tryhackme.com/badge/294192"></script>
