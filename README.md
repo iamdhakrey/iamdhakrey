@@ -1,18 +1,26 @@
-<h1 align='center'>
-  Hi there 👋 I'm Hrithik Dhakrey 👨‍💻
-</h1>
 
 <p align='center'>
-  A Python developer from Delhi, India.
+<img src="https://readme-typing-svg.herokuapp.com?lines=Hi+there+%F0%9F%91%8B+I'm+Hrithik+Dhakrey+%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB;I'm+Python+Developer" alt='Hrithik Dhakrey'/>
+</p>
+
+<p align="center">  
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/iamdhakrey/count.svg/" />
+</p>
+
+<p align='center'>
+  <a href="*"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamdhakrey&exclude_repo=Python,kernel_xioami_zizuhu_ysl,kernel_xiaomi_cannon,pycord&layout=compact&theme=dark">
+  <a href="#"><img src="https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=dark" width="355"></a>
 </p>
 
 
 <p align='center'>
-  <a href="#"><img src="https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=dark" width="350"></a>
-  
+  My Projects<br/><br>
 
+  <a href="#"> 
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=iamdhakrey&repo=sakura_web&theme=chartreuse-dark">
+  </a>
 </p>
-
 
 <p align='center'>
   My Socials<br/><br/>
