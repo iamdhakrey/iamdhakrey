@@ -9,8 +9,8 @@
 </p>
 
 <p align='center'>
-  <a href="*"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=iamdhakrey&exclude_repo=Python,kernel_xioami_zizuhu_ysl,kernel_xiaomi_cannon,pycord&layout=compact&theme=dark">
-  <a href="#"><img src="https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=dark" width="355"></a>
+  <a href="*"><img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=iamdhakrey&exclude_repo=Python,kernel_xioami_zizuhu_ysl,kernel_xiaomi_cannon,pycord&layout=compact&theme=dark">
+  <a href="#"><img src="https://github-readme-stats-sigma-five.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=dark" width="355"></a>
 </p>
 
 
@@ -18,7 +18,7 @@
   My Projects<br/><br>
 
   <a href="#"> 
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=iamdhakrey&repo=sakura_web&theme=chartreuse-dark">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=iamdhakrey&repo=sakura_web&theme=chartreuse-dark">
   </a>
 </p>
 
