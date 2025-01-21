@@ -1,6 +1,6 @@
 # Hi there 👋 I'm Dhakrey
 
-[![Website](https://img.shields.io/badge/Website-iamdhakrey.github.io-blue)](https://iamdhakrey.github.io)
+[![Website](https://img.shields.io/badge/Website-iamdhakrey.dev-blue)](https://iamdhakrey.dev)
 [![GitHub followers](https://img.shields.io/github/followers/iamdhakrey?label=Follow&style=social)](https://github.com/iamdhakrey)
 
 ## 💻 Full Stack Developer | Rust Enthusiast
@@ -36,7 +36,7 @@ I'm a passionate developer working on various projects across different technolo
 <a href="https://www.github.com/iamdhakrey"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>&nbsp;&nbsp;&nbsp;
 
 ### 🌐 Find me around the web
-- Portfolio Website: [iamdhakrey.github.io](https://iamdhakrey.github.io)
+- Portfolio Website: [iamdhakrey.dev](https://iamdhakrey.dev)
 - Personal Projects: [View All Projects](https://github.com/iamdhakrey?tab=repositories)
 
 ---
