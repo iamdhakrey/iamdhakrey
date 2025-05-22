@@ -1,7 +1,7 @@
 use axum::http::StatusCode;
 use chrono::{Duration, Utc};
 
-use crate::auth::Claims;
+use crate::api::v1::auth::handlers::Claims;
 
 pub fn encode_jwt(claims: Claims) -> Result<String, StatusCode> {
     let secret: String = "TestSecret".to_string();

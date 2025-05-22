@@ -1,7 +1,8 @@
 use axum::{Json, http::StatusCode};
 use serde::{Deserialize, Serialize};
+use utoipa::ToSchema;
 
-use crate::jwt::encode_jwt;
+use crate::api::v1::auth::jwt::encode_jwt;
 
 #[derive(Serialize, Deserialize, Debug)]
 // Define the Claims struct to represent the JWT claims
@@ -13,6 +14,15 @@ pub struct Claims {
 }
 
 // function for handle signing in
+#[utoipa::path(
+    post,
+    path = "/signin",
+    request_body = SignInData,
+    responses(
+        (status = 200, description = "Sign in successful", body = String),
+        (status = 401, description = "Unauthorized"),
+    ),
+)]
 pub async fn sign_in(
     Json(data): Json<SignInData>, // JSON payload containing sign-in data
 ) -> Result<Json<String>, StatusCode> {
@@ -26,7 +36,8 @@ pub async fn sign_in(
             username: "hrithik".to_string(),
         };
         // Return the claims as a JSON response
-        let token = encode_jwt(claims).map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        let token = encode_jwt(claims)
+            .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
         return Ok(Json(token));
     } else {
         // If the email and password are invalid, return a 401 Unauthorized status
@@ -35,8 +46,22 @@ pub async fn sign_in(
 }
 
 // Define the Auth struct to represent the authentication information
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, ToSchema)]
 pub struct SignInData {
     pub email: String,
     pub password: String,
+}
+
+#[utoipa::path(
+    get,
+    path = "/test",
+    request_body = SignInData,
+    responses(
+        (status = 200, description = "Sign in successful", body = String),
+        (status = 401, description = "Unauthorized"),
+    ),
+)]
+pub async fn test() -> Result<Json<String>, StatusCode> {
+    // Check if the email and password are valid
+    return Ok(Json("hrithik.d".to_string()));
 }

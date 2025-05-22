@@ -1,11 +1,11 @@
 use axum;
 use tokio::net::TcpListener;
+pub mod api;
 mod app;
-pub mod auth;
-mod jwt;
 pub mod middleware;
+pub mod docs;
 pub mod response;
-
+mod routes;
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
     let listener = TcpListener::bind("127.0.0.1:3000")
