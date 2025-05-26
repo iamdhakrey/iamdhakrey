@@ -1,0 +1,67 @@
+use tracing::Metadata;
+use tracing_appender::{non_blocking, non_blocking::WorkerGuard, rolling};
+use tracing_subscriber::{
+    EnvFilter, Layer, Registry, filter::filter_fn, fmt,
+    layer::SubscriberExt, util::SubscriberInitExt,
+};
+
+#[allow(dead_code)]
+pub struct LogGuards {
+    pub app_guard: WorkerGuard,
+    pub api_guard: WorkerGuard,
+}
+pub fn init_logging(log_level: &str) -> LogGuards {
+    // App logs
+    // let app_file = rolling::daily("logs", "app.log");
+    // let (app_writer, _guard1) = tracing_appender::non_blocking(app_file);
+
+    // let app_layer = fmt::layer()
+    //     .with_writer(app_writer)
+    //     .with_ansi(false)
+    //     .with_target(true)
+    //     .with_level(true)
+    //     .with_filter(
+    //         EnvFilter::try_new(app_log_level)
+    //             .unwrap_or_else(|_| EnvFilter::new("info")),
+    //     );
+
+    // // API logs (will be handled separately via tower_http)
+    // let api_file = rolling::daily("logs", "api.log");
+    // let (api_writer, _guard2) = tracing_appender::non_blocking(api_file);
+
+    // let api_layer = fmt::layer()
+    //     .with_writer(api_writer)
+    //     .with_ansi(false)
+    //     .with_target(false)
+    //     .with_level(true)
+    //     .with_filter(
+    //         EnvFilter::try_new("info")
+    //             .unwrap_or_else(|_| EnvFilter::new("info")),
+    //     );
+
+    // // Compose the subscriber
+    // let subscriber = Registry::default().with(app_layer).with(api_layer);
+
+    // tracing::subscriber::set_global_default(subscriber)
+    //     .expect("Failed to set global tracing subscriber");
+
+    let app_file = rolling::daily("logs", "app.log");
+    let (app_writer, app_guard) = non_blocking(app_file);
+
+    let api_file = rolling::daily("logs", "api.log");
+    let (api_writer, api_guard) = non_blocking(api_file);
+
+    // Only logs NOT targeting "api"
+    let app_layer = fmt::layer()
+        .with_writer(app_writer)
+        .with_filter(filter_fn(|metadata| metadata.target() != "api"));
+
+    let api_layer = fmt::layer()
+        .with_writer(api_writer)
+        .with_filter(filter_fn(|metadata| metadata.target() == "api"));
+
+    Registry::default().with(app_layer).with(api_layer).init();
+
+    // Return the guards to keep the writers alive
+    LogGuards { app_guard: app_guard, api_guard: api_guard }
+}
