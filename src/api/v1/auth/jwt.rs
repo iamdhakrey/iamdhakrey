@@ -1,4 +1,5 @@
 use axum::http::StatusCode;
+// use axum::http::StatusCode;
 use chrono::{Duration, Utc};
 
 use crate::api::v1::auth::handlers::Claims;
@@ -9,12 +10,8 @@ pub fn encode_jwt(claims: Claims) -> Result<String, StatusCode> {
     let expire = Duration::hours(24);
     let exp = now + expire;
     let exp = exp.timestamp() as usize;
-    let claims = Claims {
-        sub: claims.sub,
-        exp,
-        email: claims.email,
-        username: claims.username,
-    };
+    let claims =
+        Claims { sub: claims.sub, exp, provider: claims.provider };
 
     // Encode the claims into a JWT token
     let token = jsonwebtoken::encode(
