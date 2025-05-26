@@ -9,13 +9,15 @@ use crate::api::v1::auth::jwt::encode_jwt;
 pub struct Claims {
     pub sub: String,
     pub exp: usize,
-    pub email: String,
-    pub username: String,
+    pub provider: String,
 }
 
 // function for handle signing in
 #[utoipa::path(
     post,
+    summary = "Sign in",
+    description = "Sign in to the application",
+    tag = "Auth",
     path = "/signin",
     request_body = SignInData,
     responses(
@@ -32,8 +34,7 @@ pub async fn sign_in(
         let claims = Claims {
             sub: "hrithik.d".to_string(),
             exp: 10000000000,
-            email: "hrithik.d".to_string(),
-            username: "hrithik".to_string(),
+            provider: "hrithik".to_string(),
         };
         // Return the claims as a JSON response
         let token = encode_jwt(claims)
