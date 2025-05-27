@@ -1,10 +1,6 @@
 use axum::{self, http::Request};
-use serde::de;
 use tokio::net::TcpListener;
-use tower_http::trace::{
-    DefaultMakeSpan, DefaultOnRequest, DefaultOnResponse, MakeSpan,
-    TraceLayer,
-};
+use tower_http::trace::{DefaultOnResponse, MakeSpan, TraceLayer};
 use tracing::{Level, Span, info};
 pub mod api;
 mod app;
@@ -53,8 +49,9 @@ async fn main() {
     info!("Listening on {}", listen);
 
     let app = app::app().await.layer(
-        TraceLayer::new_for_http().make_span_with(ApiMakeSpan), // .on_request(DefaultOnRequest::new().level(Level::INFO))
-                                                                // .on_response(DefaultOnResponse::new().level(Level::INFO)),
+        TraceLayer::new_for_http()
+            .make_span_with(ApiMakeSpan) // .on_request(DefaultOnRequest) // .on_request(DefaultOnRequest::new().level(Level::INFO))
+            .on_response(DefaultOnResponse::new().level(Level::INFO)),
     );
     // Start the server
     axum::serve(listener, app).await.expect("Failed to run server");
