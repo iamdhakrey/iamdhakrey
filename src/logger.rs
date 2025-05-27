@@ -1,8 +1,8 @@
-use tracing_appender::{non_blocking, non_blocking::WorkerGuard, rolling};
+use tracing_appender::{non_blocking, non_blocking::WorkerGuard};
 use tracing_subscriber::fmt::writer::MakeWriterExt;
 use tracing_subscriber::{
-    EnvFilter, Layer, Registry, filter::filter_fn, fmt,
-    layer::SubscriberExt, util::SubscriberInitExt,
+    EnvFilter, Layer, Registry, fmt, layer::SubscriberExt,
+    util::SubscriberInitExt,
 };
 
 #[allow(dead_code)]
