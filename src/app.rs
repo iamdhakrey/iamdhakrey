@@ -5,6 +5,8 @@ use utoipa::{
 };
 use utoipa_redoc::{Redoc, Servable};
 
+use crate::{routes, state::AppState};
+
 #[derive(OpenApi)]
 #[openapi(modifiers(&SecurityAddon), paths(), tags((name="Auth", description="Authentication")))]
 struct ApiDoc;
@@ -23,14 +25,14 @@ impl Modify for SecurityAddon {
         }
     }
 }
-use crate::routes;
 pub async fn app() -> Router {
     let api = ApiDoc::openapi();
     let (router, api) = routes::add_routes(api.clone());
     let router = router
         .route("/health", axum::routing::get(health_check))
         .merge(Redoc::with_url("/redoc", api.clone()));
-    return router;
+
+    router
 }
 
 pub async fn health_check() -> impl IntoResponse {
