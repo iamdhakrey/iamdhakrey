@@ -1,16 +1,21 @@
-use axum::{self, http::Request};
+use axum::{self, Extension, http::Request};
+use state::AppState;
 use tokio::net::TcpListener;
 use tower_http::trace::{DefaultOnResponse, MakeSpan, TraceLayer};
 use tracing::{Level, Span, info};
+
 pub mod api;
 mod app;
 pub mod config;
+mod db;
 pub mod docs;
+mod entities;
 mod logger;
 pub mod middleware;
 pub mod models;
 pub mod response;
 mod routes;
+mod state;
 
 #[derive(Clone)]
 pub struct ApiMakeSpan;
@@ -35,6 +40,9 @@ async fn main() {
     let _log_gaurds = logger::init_logging(
         config.log_level.as_deref().unwrap_or("info"),
     );
+
+    let state = init_db().await;
+
     info!("Starting Spendlite API...");
     let bind_address = format!(
         "{}:{}",
@@ -48,11 +56,25 @@ async fn main() {
         listener.local_addr().expect("Failed to get local address");
     info!("Listening on {}", listen);
 
-    let app = app::app().await.layer(
+    let router = app::app().await.layer(
         TraceLayer::new_for_http()
             .make_span_with(ApiMakeSpan) // .on_request(DefaultOnRequest) // .on_request(DefaultOnRequest::new().level(Level::INFO))
             .on_response(DefaultOnResponse::new().level(Level::INFO)),
     );
+
+    // Add the application state to the router
+    let app = router.layer(Extension(state));
+
     // Start the server
     axum::serve(listener, app).await.expect("Failed to run server");
+}
+
+use std::sync::Arc;
+
+pub async fn init_db() -> AppState {
+    let config = &config::CONFIG.read().unwrap();
+    let db_url = config.database_url.clone();
+    let DB = db::connect(&db_url).await;
+    let state = AppState { db: Arc::new(DB) };
+    return state;
 }
