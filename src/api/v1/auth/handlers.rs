@@ -1,6 +1,7 @@
 use axum::{Json, http::StatusCode};
 use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
+use validator::Validate;
 
 use crate::api::v1::auth::jwt::encode_jwt;
 
@@ -65,4 +66,29 @@ pub struct SignInData {
 pub async fn test() -> Result<Json<String>, StatusCode> {
     // Check if the email and password are valid
     return Ok(Json("hrithik.d".to_string()));
+}
+
+#[utoipa::path(
+    get,
+    path = "/auth/signup",
+    request_body = SignUpData,
+    responses(
+        (status = 201, description = "Sign up successful", body = String),
+        (status = 400, description = "Bad request"),
+    ),
+)]
+pub async fn sign_up(
+    Json(data): Json<SignUpData>, // JSON payload containing sign-up data
+) -> Result<Json<String>, StatusCode> {
+    // Here you would typically save the user data to the database
+    // For this example, we will just return a success message
+    if data.email.is_empty() || data.password.is_empty() {
+        return Err(StatusCode::BAD_REQUEST);
+    }
+
+    // Simulate saving to the database
+    let response_message =
+        format!("User {} signed up successfully", data.username);
+
+    Ok(Json(response_message))
 }
