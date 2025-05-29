@@ -1,12 +1,18 @@
+use std::sync::Arc;
+
 use utoipa_axum::{router::OpenApiRouter, routes};
 
-use crate::api::v1::auth::handlers as auth;
+use crate::{
+    api::v1::auth::handlers as auth, config, db, state::AppState,
+};
 
-pub fn auth_router() -> OpenApiRouter {
+use axum::{Router, routing::post};
+
+pub async fn auth_router() -> OpenApiRouter {
     let router = OpenApiRouter::new()
-        .routes(routes!(auth::sign_in,))
-        .routes(routes!(auth::test));
-    // .route("/signup", post(auth::sign_up));
+        // .route("/signin", post(auth::sign_in))
+        .route("/test", post(auth::test));
+
     return router;
 }
 
