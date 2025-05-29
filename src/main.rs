@@ -63,7 +63,12 @@ async fn main() {
     );
 
     // Add the application state to the router
-    let app = router.layer(Extension(state));
+    let app = router
+        .route(
+            "/sign_in",
+            axum::routing::post(api::v1::auth::handlers::sign_in),
+        )
+        .layer(Extension(state));
 
     // Start the server
     axum::serve(listener, app).await.expect("Failed to run server");
@@ -74,7 +79,7 @@ use std::sync::Arc;
 pub async fn init_db() -> AppState {
     let config = &config::CONFIG.read().unwrap();
     let db_url = config.database_url.clone();
-    let DB = db::connect(&db_url).await;
-    let state = AppState { db: Arc::new(DB) };
+    let db = db::connect(&db_url).await;
+    let state = AppState { db: Arc::new(db) };
     return state;
 }
