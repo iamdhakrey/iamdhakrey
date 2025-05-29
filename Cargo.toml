@@ -8,7 +8,7 @@ default = ["hot-reload"]
 hot-reload = ["notify"]
 
 [dependencies]
-axum = "0.8.4"
+axum = { version = "0.8.4", features = ["macros"] }
 chrono = "0.4.41"
 directories = "6.0.0"
 jsonwebtoken = "9.3.1"
