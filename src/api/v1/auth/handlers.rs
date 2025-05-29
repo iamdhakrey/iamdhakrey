@@ -1,9 +1,23 @@
-use axum::{Json, http::StatusCode};
+use axum::{
+    Error, Extension, Json, debug_handler, extract::State,
+    http::StatusCode, response::IntoResponse,
+};
+use sea_orm::{ColumnTrait, DatabaseConnection, EntityTrait, QueryFilter};
 use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
 use validator::Validate;
 
-use crate::api::v1::auth::jwt::encode_jwt;
+use crate::{
+    api::v1::{
+        auth::jwt::encode_jwt,
+        response::{ErrorResponse, GenericResponse},
+    },
+    db,
+    entities::user,
+    state::AppState,
+};
+
+use super::{schema::SignUpData, validators::ValidateJson};
 
 #[derive(Serialize, Deserialize, Debug)]
 // Define the Claims struct to represent the JWT claims
@@ -11,6 +25,11 @@ pub struct Claims {
     pub sub: String,
     pub exp: usize,
     pub provider: String,
+}
+
+#[derive(Serialize, ToSchema)]
+pub struct SignInResponse {
+    pub token: String,
 }
 
 // function for handle signing in
@@ -22,33 +41,59 @@ pub struct Claims {
     path = "/signin",
     request_body = SignInData,
     responses(
-        (status = 200, description = "Sign in successful", body = String),
-        (status = 401, description = "Unauthorized"),
+        (status = 200, description = "Sign in successful", body = SignInResponse),
+        (status = 401, description = "Unauthorized")
     ),
 )]
 pub async fn sign_in(
-    Json(data): Json<SignInData>, // JSON payload containing sign-in data
-) -> Result<Json<String>, StatusCode> {
+    Extension(state): Extension<AppState>, // Database connection state
+    ValidateJson(data): ValidateJson<SignInData>,
+) -> Result<Json<String>, GenericResponse<String>> {
     // Check if the email and password are valid
+    // let db_state = Extension(AppState);
     if data.email == "hrithik.d" && data.password == "hrithik@123" {
         // Create a Claims object with the user's information
+
+        let _user = user::Entity::find()
+            .filter(user::Column::Email.eq(data.email))
+            .one(&*state.db)
+            .await
+            .map_err(|_| {
+                GenericResponse::<String>::error(
+                    "Database Error".to_string(),
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                )
+            })?
+            .ok_or_else(|| {
+                GenericResponse::<String>::error(
+                    "User not found".to_string(),
+                    StatusCode::NOT_FOUND,
+                )
+            })?;
         let claims = Claims {
             sub: "hrithik.d".to_string(),
             exp: 10000000000,
             provider: "hrithik".to_string(),
         };
         // Return the claims as a JSON response
-        let token = encode_jwt(claims)
-            .map_err(|_| StatusCode::INTERNAL_SERVER_ERROR)?;
+        let token = encode_jwt(claims).map_err(|_| {
+            GenericResponse::<String>::error(
+                "Failed to Generate Token".to_string(),
+                StatusCode::INTERNAL_SERVER_ERROR,
+            )
+        })?;
         return Ok(Json(token));
     } else {
         // If the email and password are invalid, return a 401 Unauthorized status
-        Err(StatusCode::UNAUTHORIZED)
+        return Err(GenericResponse::<String>::error(
+            "Invalid email or password".to_string(),
+            StatusCode::UNAUTHORIZED,
+        ));
     }
 }
 
 // Define the Auth struct to represent the authentication information
-#[derive(Serialize, Deserialize, ToSchema)]
+#[derive(Serialize, Deserialize, ToSchema, Validate)]
 pub struct SignInData {
     pub email: String,
     pub password: String,
