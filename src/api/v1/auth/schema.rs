@@ -4,6 +4,7 @@ use validator::Validate;
 
 #[derive(Serialize, Deserialize, ToSchema, Validate)]
 pub struct SignUpData {
+    /// Username field with validation
     #[validate(length(
         min = 5,
         max = 20,
@@ -11,12 +12,15 @@ pub struct SignUpData {
     ))]
     pub username: String,
 
+    /// Email field with validation
     #[validate(email(message = "Invalid email address"))]
     pub email: String,
     #[validate(length(
         min = 8,
         message = "Password must be at least 8 characters long"
     ))]
+
+    /// Password field with validation  
     pub password: String,
     #[validate(length(
         min = 2,
