@@ -2,7 +2,6 @@ use axum::{Extension, Json, http::StatusCode};
 use sea_orm::{ColumnTrait, EntityTrait, QueryFilter};
 use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
-use validator::Validate;
 
 use crate::{
     api::v1::{auth::jwt::encode_jwt, response::GenericResponse},
