@@ -1,7 +1,7 @@
 // generic api response types
 use axum::{
     Json,
-    http::{StatusCode, status},
+    http::StatusCode,
     response::{IntoResponse, Response},
 };
 
@@ -82,6 +82,19 @@ impl IntoResponse for ValidationErrorResponse {
             data: Some(self.errors),
         };
         let status_code = StatusCode::UNPROCESSABLE_ENTITY;
+        (status_code, Json(response)).into_response()
+    }
+}
+
+pub struct GenericErrorResponse {
+    pub status: String,
+    pub message: String,
+}
+impl IntoResponse for GenericErrorResponse {
+    fn into_response(self) -> Response {
+        let response =
+            ErrorResponse { status: self.status, message: self.message };
+        let status_code = StatusCode::INTERNAL_SERVER_ERROR;
         (status_code, Json(response)).into_response()
     }
 }
