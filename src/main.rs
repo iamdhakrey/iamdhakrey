@@ -1,7 +1,9 @@
 use axum::{self, Extension, http::Request};
 use state::AppState;
 use tokio::net::TcpListener;
-use tower_http::trace::{DefaultOnResponse, MakeSpan, TraceLayer};
+use tower_http::trace::{
+    DefaultMakeSpan, DefaultOnResponse, MakeSpan, TraceLayer,
+};
 use tracing::{Level, Span, info};
 
 pub mod api;
@@ -36,7 +38,13 @@ impl<B> MakeSpan<B> for ApiMakeSpan {
 #[tokio::main(flavor = "current_thread")]
 async fn main() {
     let config = &config::CONFIG.read().unwrap();
-
+    use std::env;
+    unsafe {
+        env::set_var(
+            "RUST_LOG",
+            "info,spendlite-api=info,tower_http=off,sqlx=off",
+        );
+    }
     let _log_gaurds = logger::init_logging(
         config.log_level.as_deref().unwrap_or("info"),
     );
@@ -58,7 +66,8 @@ async fn main() {
 
     let router = app::app().await.layer(
         TraceLayer::new_for_http()
-            .make_span_with(ApiMakeSpan) // .on_request(DefaultOnRequest) // .on_request(DefaultOnRequest::new().level(Level::INFO))
+            .make_span_with(DefaultMakeSpan::new().level(Level::INFO))
+            // .make_span_with(ApiMakeSpan) // .on_request(DefaultOnRequest) // .on_request(DefaultOnRequest::new().level(Level::INFO))
             .on_response(DefaultOnResponse::new().level(Level::INFO)),
     );
 
