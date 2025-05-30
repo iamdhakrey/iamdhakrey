@@ -1,11 +1,12 @@
-use axum::{Extension, Json, http::StatusCode};
+use axum::{Extension, Json, http::StatusCode, response::IntoResponse};
 use sea_orm::{ColumnTrait, EntityTrait, QueryFilter};
 use serde::{Deserialize, Serialize};
 use utoipa::ToSchema;
 
 use crate::{
-    api::v1::{auth::jwt::encode_jwt, response::GenericResponse},
+    api::v1::{auth::jwt::encode_jwt, response::UserCreateResponse},
     entities::user,
+    response::{GenericErrorResponse, GenericResponse},
     state::AppState,
 };
 
@@ -82,7 +83,7 @@ pub async fn sign_in(
 }
 
 #[utoipa::path(
-    get,
+    post,
     path = "/auth/signup",
     request_body = SignUpData,
     responses(
@@ -91,17 +92,74 @@ pub async fn sign_in(
     ),
 )]
 pub async fn sign_up(
+    Extension(state): Extension<AppState>, // Database connection state
     Json(data): Json<SignUpData>, // JSON payload containing sign-up data
-) -> Result<Json<String>, StatusCode> {
+) -> Result<GenericResponse<UserCreateResponse>, GenericErrorResponse> {
     // Here you would typically save the user data to the database
     // For this example, we will just return a success message
-    if data.email.is_empty() || data.password.is_empty() {
-        return Err(StatusCode::BAD_REQUEST);
+    let existing_user = user::Entity::find()
+        .filter(user::Column::Email.eq(data.email.clone()))
+        .one(&*state.db)
+        .await
+        .map_err(|_| {
+            GenericErrorResponse {
+                status: "error".to_string(),
+                message: "Database Error".to_string(),
+                resolution: None,
+                status_code: StatusCode::INTERNAL_SERVER_ERROR,
+            }
+            .into_response()
+        });
+    if existing_user.is_ok() && existing_user.unwrap().is_some() {
+        return Err(GenericErrorResponse {
+            status: "error".to_string(),
+            message: "User already exists".to_string(),
+            resolution: Some("Please use a different email".to_string()),
+            status_code: StatusCode::BAD_REQUEST,
+        });
     }
 
-    // Simulate saving to the database
-    let response_message =
-        format!("User {} signed up successfully", data.username);
+    // Create a new user in the database
+    let new_user = user::ActiveModel {
+        username: sea_orm::Set(data.username.clone()),
+        email: sea_orm::Set(data.email.clone()),
+        // first_name: sea_orm::Set(data.first_name.clone()),
+        // last_name: sea_orm::Set(data.last_name.clone()),
+        ..Default::default()
+    };
+    let _user = user::Entity::insert(new_user)
+        .exec(&*state.db)
+        .await
+        .map_err(|_| {
+            GenericErrorResponse {
+                status: "error".to_string(),
+                message: "Failed to create user".to_string(),
+                resolution: None,
+                status_code: StatusCode::INTERNAL_SERVER_ERROR,
+            }
+            .into_response()
+        });
 
-    Ok(Json(response_message))
+    // If the user creation is successful, return a success response
+    if _user.is_err() {
+        return Err(GenericErrorResponse {
+            status: "error".to_string(),
+            message: format!("Failed to create user: {:?}", _user),
+            resolution: None,
+            status_code: StatusCode::INTERNAL_SERVER_ERROR,
+        });
+    }
+    let response = UserCreateResponse {
+        id: "fef".to_string(),
+        username: data.username,
+        email: data.email,
+        first_name: data.first_name,
+        last_name: data.last_name,
+    };
+    Ok(GenericResponse::<UserCreateResponse>::success(
+        StatusCode::CREATED,
+        Some("user Created".to_string()),
+        response,
+        "success".to_string(),
+    ))
 }

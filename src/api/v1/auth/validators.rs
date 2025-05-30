@@ -8,7 +8,7 @@ use serde::de::DeserializeOwned;
 use std::ops::Deref;
 use validator::Validate;
 
-use crate::api::v1::response::{
+use crate::response::{
     ErrorResponse, GenericResponse, ValidationErrorResponse,
 };
 
