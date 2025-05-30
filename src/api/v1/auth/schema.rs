@@ -39,3 +39,13 @@ pub struct SignUpData {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub last_name: Option<String>,
 }
+
+// Define the Auth struct to represent the authentication information
+#[derive(Serialize, Deserialize, ToSchema, Validate)]
+pub struct SignInData {
+    #[validate(email(message = "Invalid email address"))]
+    pub username: String,
+    #[validate(length(min = 6))]
+    #[serde(skip_serializing_if = "String::is_empty")]
+    pub password: String,
+}
