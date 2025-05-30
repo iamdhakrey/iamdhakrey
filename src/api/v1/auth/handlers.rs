@@ -10,7 +10,10 @@ use crate::{
     state::AppState,
 };
 
-use super::{schema::SignUpData, validators::ValidateJson};
+use super::{
+    schema::{SignInData, SignUpData},
+    validators::ValidateJson,
+};
 
 #[derive(Serialize, Deserialize, Debug)]
 // Define the Claims struct to represent the JWT claims
@@ -46,8 +49,9 @@ pub async fn sign_in(
     // let db_state = Extension(AppState);
     // Create a Claims object with the user's information
 
+    let email = data.username.clone();
     let _user = user::Entity::find()
-        .filter(user::Column::Email.eq(data.email))
+        .filter(user::Column::Email.eq(data.username))
         .one(&*state.db)
         .await
         .map_err(|_| {
@@ -58,7 +62,7 @@ pub async fn sign_in(
         })?
         .ok_or_else(|| {
             GenericResponse::<String>::error(
-                "{}".to_string(),
+                format!("User {} not found", email),
                 StatusCode::NOT_FOUND,
             )
         })?;
@@ -76,27 +80,6 @@ pub async fn sign_in(
         )
     })?;
     return Ok(Json(token));
-}
-
-// Define the Auth struct to represent the authentication information
-#[derive(Serialize, Deserialize, ToSchema, Validate)]
-pub struct SignInData {
-    pub email: String,
-    pub password: String,
-}
-
-#[utoipa::path(
-    get,
-    path = "/test",
-    request_body = SignInData,
-    responses(
-        (status = 200, description = "Sign in successful", body = String),
-        (status = 401, description = "Unauthorized"),
-    ),
-)]
-pub async fn test() -> Result<Json<String>, StatusCode> {
-    // Check if the email and password are valid
-    return Ok(Json("hrithik.d".to_string()));
 }
 
 #[utoipa::path(
