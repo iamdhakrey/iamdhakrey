@@ -1,7 +1,9 @@
 use axum::{Extension, Json, http::StatusCode, response::IntoResponse};
 use sea_orm::{ColumnTrait, EntityTrait, QueryFilter};
 use serde::{Deserialize, Serialize};
+use tracing::{error, info};
 use utoipa::ToSchema;
+use uuid::Uuid;
 
 use crate::{
     api::v1::{auth::jwt::encode_jwt, response::UserCreateResponse},
@@ -52,7 +54,7 @@ pub async fn sign_in(
     let email = data.username.clone();
     let _user = user::Entity::find()
         .filter(user::Column::Email.eq(data.username))
-        .one(&*state.db)
+        .one(&state.db)
         .await
         .map_err(|_| {
             GenericResponse::<String>::error(
@@ -99,9 +101,10 @@ pub async fn sign_up(
     // For this example, we will just return a success message
     let existing_user = user::Entity::find()
         .filter(user::Column::Email.eq(data.email.clone()))
-        .one(&*state.db)
+        .one(&state.db)
         .await
-        .map_err(|_| {
+        .map_err(|e| {
+            error!("Database insert error: {:?}", e);
             GenericErrorResponse {
                 status: "error".to_string(),
                 message: "Database Error".to_string(),
@@ -119,18 +122,26 @@ pub async fn sign_up(
         });
     }
 
+    // generate a unique ID for the user
+    let user_id = Uuid::new_v4();
+    info!("Creating user with ID: {:?}", user_id);
+
     // Create a new user in the database
     let new_user = user::ActiveModel {
+        id: sea_orm::Set(user_id),
         username: sea_orm::Set(data.username.clone()),
         email: sea_orm::Set(data.email.clone()),
         // first_name: sea_orm::Set(data.first_name.clone()),
         // last_name: sea_orm::Set(data.last_name.clone()),
         ..Default::default()
     };
+    info!("Creating user: {:?}", data.username);
     let _user = user::Entity::insert(new_user)
-        .exec(&*state.db)
+        .exec(&state.db)
         .await
-        .map_err(|_| {
+        .map_err(|e| {
+            error!("Database insert error: {:?}", e);
+
             GenericErrorResponse {
                 status: "error".to_string(),
                 message: "Failed to create user".to_string(),
