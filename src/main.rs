@@ -42,7 +42,7 @@ async fn main() {
     unsafe {
         env::set_var(
             "RUST_LOG",
-            "info,spendlite-api=info,tower_http=off,sqlx=off",
+            "info,spendlite-api=info,tower_http=info,sqlx=off",
         );
     }
     let _log_gaurds = logger::init_logging(
@@ -83,12 +83,10 @@ async fn main() {
     axum::serve(listener, app).await.expect("Failed to run server");
 }
 
-use std::sync::Arc;
-
 pub async fn init_db() -> AppState {
     let config = &config::CONFIG.read().unwrap();
     let db_url = config.database_url.clone();
     let db = db::connect(&db_url).await;
-    let state = AppState { db: Arc::new(db) };
+    let state = AppState { db: db };
     return state;
 }
