@@ -91,6 +91,48 @@ pub struct GenericErrorResponse {
     pub message: String,
     pub resolution: Option<String>,
 }
+
+impl GenericErrorResponse {
+    pub fn not_found(message: &str) -> Self {
+        Self {
+            status: "error".to_string(),
+            status_code: StatusCode::NOT_FOUND,
+            message: message.to_string(),
+            resolution: None,
+        }
+    }
+
+    pub fn conflict(message: String) -> Self {
+        Self {
+            status: "error".to_string(),
+            status_code: StatusCode::CONFLICT,
+            message,
+            resolution: None,
+        }
+    }
+
+    pub fn internal_error(message: String) -> Self {
+        Self {
+            status: "error".to_string(),
+            status_code: StatusCode::INTERNAL_SERVER_ERROR,
+            message,
+            resolution: None,
+        }
+    }
+
+    pub fn bad_request(
+        message: String,
+        resolution: Option<String>,
+    ) -> Self {
+        Self {
+            status: "error".to_string(),
+            status_code: StatusCode::BAD_REQUEST,
+            message,
+            resolution,
+        }
+    }
+}
+
 impl IntoResponse for GenericErrorResponse {
     fn into_response(self) -> Response {
         let response = ErrorResponse {
