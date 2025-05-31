@@ -67,8 +67,8 @@ pub fn init_logging(log_level: &str) -> LogGuards {
     let console_layer = fmt::Layer::default()
         .with_writer(stdout_writer.with_max_level(tracing::Level::INFO))
         .with_ansi(true) // pretty color output
-        // .with_target(true)
-        .compact()
+        .with_target(false)
+        // .compact()
         .with_filter(
             EnvFilter::try_new(log_level)
                 .unwrap_or_else(|_| EnvFilter::new("info")),
