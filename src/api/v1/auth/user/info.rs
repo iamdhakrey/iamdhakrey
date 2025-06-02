@@ -1,17 +1,12 @@
-use std::os::linux::raw::stat;
-
 use axum::http::StatusCode;
 use sea_orm::{ColumnTrait, DatabaseConnection, EntityTrait, QueryFilter};
+use tracing::error;
 use uuid::Uuid;
 
-use crate::{
-    entities::{
-        self, user::Entity as UserEntity, user::Model as UserModel,
-    },
-    response::GenericErrorResponse,
+use crate::entities::{
+    self, user::Entity as UserEntity, user::Model as UserModel,
 };
 
-#[derive(Debug, Clone)]
 pub struct UserCheck {
     pub id: Option<Uuid>,
     pub username: String,
@@ -19,37 +14,46 @@ pub struct UserCheck {
 }
 
 pub async fn get_user_info(
-    user: UserCheck,
+    user_check: UserCheck,
     db: &DatabaseConnection,
 ) -> Result<UserModel, StatusCode> {
-    // Fetch the user from the database
-    match UserEntity::find()
-        .filter(<entities::user::Entity as sea_orm::EntityTrait>::Column::Username.eq(user.username))
-        .one(db)
-        .await
-    {
-        Ok(Some(user)) => {
-            let _user_by_id = UserEntity::find()
-                .filter(<entities::user::Entity as sea_orm::EntityTrait>::Column::Id.eq(Some(user.id)))
+    // Build base query
+    let mut query = UserEntity::find().filter(
+        entities::user::Column::Username.eq(user_check.username.clone()),
+    );
+    // .filter(
+    //     entities::user::Column::Email.eq(user_check.email.clone()),
+    // );
+
+    // Optional ID filter
+    if let Some(id) = user_check.id {
+        query = query.filter(entities::user::Column::Id.eq(id));
+    }
+
+    // Execute query
+    match query.one(db).await {
+        Ok(Some(user)) => Ok(user),
+        Ok(None) => {
+            let email_query = UserEntity::find()
+                .filter(
+                    entities::user::Column::Email
+                        .eq(user_check.email.clone()),
+                )
                 .one(db)
-                .await
-                .map_err(|e| StatusCode::INTERNAL_SERVER_ERROR)?;
-            if _user_by_id.is_some() {
-                let _user_by_email = UserEntity::find()
-                    .filter(<entities::user::Entity as sea_orm::EntityTrait>::Column::Email.eq(user.email.clone()))
-                    .one(db)
-                    .await
-                    .map_err(|e| GenericErrorResponse::internal_error(e.to_string()));
-                if _user_by_email.is_ok() {
-                    Ok(user)
-                } else {
-                    Err(StatusCode::NOT_FOUND)
-                }
-            } else {
-                return Err(StatusCode::NOT_FOUND);
+                .await;
+            if let Ok(Some(_)) = email_query {
+                error!(
+                    "User with email {} already exists",
+                    user_check.email
+                );
+                return Err(StatusCode::CONFLICT);
             }
-        },
-        Ok(None) => Err(StatusCode::NOT_FOUND),
-        Err(e) => Err(StatusCode::INTERNAL_SERVER_ERROR),
+            error!("User with username {} not found", user_check.username);
+            Err(StatusCode::NOT_FOUND)
+        }
+        Err(e) => {
+            error!("Database query failed: {:?}", e);
+            Err(StatusCode::INTERNAL_SERVER_ERROR)
+        }
     }
 }
