@@ -1,17 +1,17 @@
 use axum::{Extension, Json, http::StatusCode};
-use sea_orm::{ColumnTrait, EntityTrait, QueryFilter};
 use serde::{Deserialize, Serialize};
 use tracing::{error, info};
 use utoipa::ToSchema;
 
 use crate::{
     api::v1::{auth::jwt::encode_jwt, response::UserCreateResponse},
-    entities::user,
     response::{GenericErrorResponse, GenericResponse},
     state::AppState,
 };
 
-use super::user::hash::verify_password;
+use super::user::{
+    hash::verify_password, info::UserCheck, info::get_user_info,
+};
 use super::{
     schema::{SignInData, SignUpData},
     user::create::create_user,
@@ -53,22 +53,23 @@ pub async fn sign_in(
     // Create a Claims object with the user's information
 
     let email = data.username.clone();
-    let _user = user::Entity::find()
-        .filter(user::Column::Email.eq(data.username))
-        .one(&state.db)
-        .await
-        .map_err(|_| {
-            GenericResponse::<String>::error(
-                "Database Error".to_string(),
-                StatusCode::INTERNAL_SERVER_ERROR,
-            )
-        })?
-        .ok_or_else(|| {
-            GenericResponse::<String>::error(
-                format!("User {} not found", email),
-                StatusCode::NOT_FOUND,
-            )
-        })?;
+    let db = &state.db;
+    // Find the user by username or email
+    let _user = get_user_info(
+        UserCheck {
+            id: None,
+            username: data.username.clone(),
+            email: email.clone(),
+        },
+        db,
+    )
+    .await
+    .map_err(|_| {
+        GenericResponse::<String>::error(
+            "User not found".to_string(),
+            StatusCode::NOT_FOUND,
+        )
+    })?;
     // Verify the password
     if !verify_password(&data.password, &_user.password_hash) {
         return Err(GenericResponse::<String>::error(
