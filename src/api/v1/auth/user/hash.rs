@@ -14,6 +14,7 @@ pub fn hash_password(password: &str) -> Result<String, bool> {
     }
 }
 
+#[allow(dead_code)]
 pub fn verify_password(
     password: &str,
     hash: &str,
