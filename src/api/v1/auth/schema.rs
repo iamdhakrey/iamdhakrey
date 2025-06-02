@@ -43,7 +43,11 @@ pub struct SignUpData {
 // Define the Auth struct to represent the authentication information
 #[derive(Serialize, Deserialize, ToSchema, Validate)]
 pub struct SignInData {
-    #[validate(email(message = "Invalid email address"))]
+    /// Username or email field with validation
+    #[validate(length(
+        min = 5,
+        message = "Username must be at least 5 characters long"
+    ))]
     pub username: String,
     #[validate(length(min = 6))]
     #[serde(skip_serializing_if = "String::is_empty")]
