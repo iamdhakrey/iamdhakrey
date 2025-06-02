@@ -11,6 +11,7 @@ use crate::{
     state::AppState,
 };
 
+use super::user::hash::verify_password;
 use super::{
     schema::{SignInData, SignUpData},
     user::create::create_user,
@@ -68,11 +69,19 @@ pub async fn sign_in(
                 StatusCode::NOT_FOUND,
             )
         })?;
-
+    // Verify the password
+    if !verify_password(&data.password, &_user.password_hash) {
+        return Err(GenericResponse::<String>::error(
+            "Invalid credentials".to_string(),
+            StatusCode::UNAUTHORIZED,
+        ));
+    }
+    // Create the claims for the JWT
     let claims = Claims {
-        sub: "hrithik.d".to_string(),
-        exp: 10000000000,
-        provider: "hrithik".to_string(),
+        sub: _user.id.to_string(),
+        exp: (chrono::Utc::now() + chrono::Duration::days(1)).timestamp()
+            as usize,
+        provider: "local".to_string(), // Assuming local authentication
     };
     // Return the claims as a JSON response
     let token = encode_jwt(claims).map_err(|_| {
