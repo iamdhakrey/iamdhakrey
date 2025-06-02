@@ -1,0 +1,18 @@
+services:
+  # Setup DB  
+  db:
+    image: postgres:17
+    container_name: SpendLite-DB
+    environment:
+      POSTGRES_USER: SpendLiteUser
+      POSTGRES_PASSWORD: SpendLitePassword
+      POSTGRES_DB: SpendLiteDB
+    # Database URL: postgres://SpendLiteUser:SpendLitePassword@db:5432/SpendLiteDB
+    ports:
+      - "5440:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
