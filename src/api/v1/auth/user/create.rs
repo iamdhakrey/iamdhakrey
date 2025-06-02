@@ -2,7 +2,7 @@ use super::info::get_user_info;
 use crate::{
     api::v1::auth::{schema::SignUpData, user::info::UserCheck},
     entities::user::ActiveModel as UserActiveModel,
-    entities::{prelude::User, user::Entity},
+    entities::user::Entity,
     response::GenericErrorResponse,
 };
 use sea_orm::{DatabaseConnection, EntityTrait};
