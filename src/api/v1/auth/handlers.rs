@@ -4,7 +4,10 @@ use tracing::{error, info};
 use utoipa::ToSchema;
 
 use crate::{
-    api::v1::{auth::jwt::encode_jwt, response::UserCreateResponse},
+    api::v1::{
+        auth::jwt::encode_jwt, response::UserCreateResponse,
+        validators::ValidateJson,
+    },
     response::{GenericErrorResponse, GenericResponse},
     state::AppState,
 };
@@ -15,7 +18,6 @@ use super::user::{
 use super::{
     schema::{SignInData, SignUpData},
     user::create::create_user,
-    validators::ValidateJson,
 };
 
 #[derive(Serialize, Deserialize, Debug)]
