@@ -1,8 +1,12 @@
-use axum::{Extension, Json, http::StatusCode};
+use axum::{Extension, Json};
 
 use crate::{
-    api::v1::{spend::schema::SpendData, validators::ValidateJson},
-    response::GenericResponse,
+    api::v1::{
+        spend::{add::add_spend, schema::SpendData},
+        validators::ValidateJson,
+    },
+    entities::user::ActiveModel as UserActiveModel,
+    response::GenericErrorResponse,
     state::AppState,
 };
 
@@ -22,24 +26,8 @@ use crate::{
 pub async fn create_spend(
     Extension(state): Extension<AppState>, // Database connection state
     ValidateJson(data): ValidateJson<SpendData>,
-) -> Result<Json<SpendData>, GenericResponse<String>> {
-    // Validate the spend data
-    if data.amount <= 0.0 {
-        return Err(GenericResponse::<String>::error(
-            "Amount must be greater than zero".to_string(),
-            StatusCode::BAD_REQUEST,
-        ));
-    }
-
-    // Insert the spend data into the database
-    // let db = &state.db;
-    // let spend_id = insert_spend(data, db).await.map_err(|e| {
-    //     GenericResponse::<String>::error(
-    //         format!("Failed to create spend: {}", e),
-    //         StatusCode::INTERNAL_SERVER_ERROR,
-    //     )
-    // })?;
-
-    // Return the created spend data with a 201 status code
-    Ok(Json(SpendData { id: spend_id, ..data }))
+    user: UserActiveModel,
+) -> Result<Json<String>, GenericErrorResponse> {
+    let user_id = user.id.unwrap();
+    add_spend(user_id, Json(data), &state.db).await
 }
