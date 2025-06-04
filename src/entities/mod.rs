@@ -2,5 +2,6 @@
 
 pub mod prelude;
 
+pub mod spend;
 pub mod user;
 pub mod user_profile;

@@ -26,8 +26,16 @@ pub struct Model {
 
 #[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
 pub enum Relation {
+    #[sea_orm(has_many = "super::spend::Entity")]
+    Spend,
     #[sea_orm(has_one = "super::user_profile::Entity")]
     UserProfile,
+}
+
+impl Related<super::spend::Entity> for Entity {
+    fn to() -> RelationDef {
+        Relation::Spend.def()
+    }
 }
 
 impl Related<super::user_profile::Entity> for Entity {
