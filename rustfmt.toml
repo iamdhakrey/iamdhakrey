@@ -1,6 +1,0 @@
-max_width = 75
-indent_style = "Block"
-comment_width = 75
-use_small_heuristics = "Max"
-reorder_imports = true
-newline_style = "Unix"
