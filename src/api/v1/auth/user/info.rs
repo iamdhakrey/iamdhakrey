@@ -3,14 +3,26 @@ use sea_orm::{ColumnTrait, DatabaseConnection, EntityTrait, QueryFilter};
 use tracing::error;
 use uuid::Uuid;
 
-use crate::entities::{
-    self, user::Entity as UserEntity, user::Model as UserModel,
-};
-
+use crate::entities::prelude::User as UserEntity;
+use crate::entities::{self, user::Model as UserModel};
 pub struct UserCheck {
     pub id: Option<Uuid>,
     pub username: String,
     pub email: String,
+}
+
+pub async fn get_user_by_uuid(
+    user_id: Uuid,
+    db: &DatabaseConnection,
+) -> Result<UserModel, StatusCode> {
+    UserEntity::find_by_id(user_id)
+        .one(db)
+        .await
+        .map_err(|e| {
+            error!("Database query failed: {:?}", e);
+            StatusCode::INTERNAL_SERVER_ERROR
+        })
+        .map(|user| user.expect("User not found"))
 }
 
 pub async fn get_user_info(
