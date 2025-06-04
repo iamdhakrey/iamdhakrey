@@ -1,5 +1,7 @@
 use sea_orm_migration::{prelude::*, schema::*};
 
+use crate::m20220101_000001_create_table::User;
+
 #[derive(DeriveMigrationName)]
 pub struct Migration;
 
@@ -101,7 +103,7 @@ impl MigrationTrait for Migration {
 }
 
 #[derive(DeriveIden)]
-enum Spend {
+pub enum Spend {
     Table,
     Id,
     UserId,
