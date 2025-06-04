@@ -1,5 +1,16 @@
+use crate::api::v1::auth::user::info::get_user_by_uuid;
+use crate::state::AppState;
+use axum::Extension;
+use axum::extract::FromRequestParts;
 use axum::http::StatusCode;
+use axum::http::request::Parts;
+use axum_extra::{
+    TypedHeader,
+    headers::{Authorization, authorization::Bearer},
+};
+use uuid::Uuid;
 // use axum::http::StatusCode;
+use crate::entities::user::ActiveModel as UserActiveModel;
 use chrono::{Duration, Utc};
 
 use crate::api::v1::auth::handlers::Claims;
@@ -42,4 +53,51 @@ pub fn decode_jwt(token: &str) -> Result<Claims, StatusCode> {
     }
     // Return the claims
     Ok(claims)
+}
+
+// #[async_trait]
+impl<S> FromRequestParts<S> for UserActiveModel
+where
+    S: Send + Sync,
+{
+    type Rejection = (StatusCode, String);
+
+    async fn from_request_parts(
+        parts: &mut Parts,
+        state: &S,
+    ) -> Result<Self, Self::Rejection> {
+        // Step 1: Extract Bearer token
+        let TypedHeader(Authorization(bearer)) = TypedHeader::<
+            Authorization<Bearer>,
+        >::from_request_parts(
+            parts, state
+        )
+        .await
+        .map_err(|_| (StatusCode::UNAUTHORIZED, "Missing token".into()))?;
+
+        let Extension(AppState { db }) =
+            parts.extensions.get::<Extension<AppState>>().cloned().ok_or(
+                (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    "Missing AppState".into(),
+                ),
+            )?;
+
+        let db = db.clone();
+
+        // Step 2: Decode the JWT
+        let decoded = decode_jwt(bearer.token()).map_err(|_| {
+            (StatusCode::UNAUTHORIZED, "Invalid token".into())
+        })?;
+
+        let user_id = decoded.sub.parse::<Uuid>().map_err(|_| {
+            (StatusCode::UNAUTHORIZED, "Invalid user ID in token".into())
+        })?;
+
+        // Step 3: Fetch user from DB
+        let user = get_user_by_uuid(user_id, &db).await.map_err(|_| {
+            (StatusCode::UNAUTHORIZED, "User not found".into())
+        })?;
+        Ok(user.into())
+    }
 }
