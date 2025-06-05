@@ -42,4 +42,4 @@ I'm a passionate developer working on various projects across different technolo
 ---
 
 💡 **Note:** Currently working on Rust-based projects and enjoying building efficient, performant applications.
-   
+    
