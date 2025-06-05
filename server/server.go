@@ -41,5 +41,9 @@ func (s *Server) Restart() {
 		println("Error stopping server:", err)
 		return
 	}
-	s.Start() // Restart the server
+	if err := s.Start(); err != nil {
+		println("Error restarting server:", err)
+		return
+	}
+	println("Server restarted successfully")
 }
