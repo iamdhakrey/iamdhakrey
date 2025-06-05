@@ -1,6 +1,8 @@
 package server
 
-import "strings"
+import (
+	"strings"
+)
 
 type Server struct {
 	// Add fields as needed for your server configuration
