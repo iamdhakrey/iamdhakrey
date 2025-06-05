@@ -1,8 +1,10 @@
-package spendliteapi
+package main
 
-import "fmt"
+import (
+	"spendlite-api/cmd"
+)
 
 func main() {
 	// Initialize the API server
-	fmt.Println("Initializing SpendLite API server...")
+	cmd.Execute() // This will start the Cobra command line interface
 }
