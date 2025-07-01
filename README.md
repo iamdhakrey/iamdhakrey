@@ -16,7 +16,7 @@
 
 ## 🎯 What I'm Building Right Now
 
-> *"Code is poetry, and I'm writing symphonies in Rust, Go, and TypeScript"* 🎵
+> *"Code is poetry, and I'm writing symphonies in Rust, Go, Python, and TypeScript"* 🎵
 
 ### 💰 **SpendLite** - Personal Finance Revolution
 <div align="left">
@@ -209,7 +209,7 @@ const dhakrey = {
     code: ["Go", "Rust", "TypeScript", "Python"],
     askMeAbout: ["FinTech", "Desktop Apps", "Hardware Integration", "Performance"],
     technologies: {
-        backend: ["Go + Echo", "Rust", "PostgreSQL"],
+        backend: ["Go + Echo", "Rust", "Python", "PostgreSQL"],
         frontend: ["React", "TypeScript", "Tauri"],
         devOps: ["Docker", "GitHub Actions", "Linux"],
         databases: ["PostgreSQL", "SQLite"],
@@ -224,7 +224,7 @@ const dhakrey = {
   
 **🎯 Currently working on:** *Making personal finance management actually enjoyable*  
 **🌱 Learning:** *Advanced Rust patterns & WebAssembly magic*  
-**💡 Ask me about:** *Anything from Rust performance to Go APIs to hardware automation*
+**💡 Ask me about:** *Anything from Rust performance to Go/Python APIs to hardware automation*
 
 ---
 
