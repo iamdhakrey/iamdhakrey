@@ -18,6 +18,16 @@
 
 > *"Code is poetry, and I'm writing symphonies in Rust, Go, Python, and TypeScript"* 🎵
 
+### 🧩 **Sudoku Solver** - Rust Library
+**[Sudoko Solver](https://github.com/iamdhakrey/sudoko)** - Solve Sudoku puzzle library in Rust  
+```rust
+// Classic puzzle, smart solution!
+🔹 solving puzzles
+🔹 Clean Rust codebase
+🔹 WASM & TUI support for integration
+🔹 Open source & easy to contribute
+```
+
 ### 💰 **SpendLite** - Personal Finance Revolution
 <div align="left">
   <img src="https://img.shields.io/badge/🚀_Status-Live_&_Deployed-00D4AA?style=flat-square" />
