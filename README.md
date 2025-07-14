@@ -9,7 +9,11 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A855F7&center=true&vCenter=true&width=940&lines=Full+Stack+Developer+%7C+Rust+Enthusiast;Go+Backend+Specialist+%7C+FinTech+Builder;Desktop+Apps+with+Tauri+%7C+Hardware+Hacker;Building+the+Future%2C+One+Commit+at+a+Time!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A855F7&center=true&vCenter=true&width=940&lines=Full+Stack+Developer+%7C+Rust+Enthusiast;Go+Backend+Specialist+%7C+FinTech+Builder;Desktop+Apps+with+Tauri+%7C+Hardware+Hacker;Building+the+Future%2C+One+Commit+at+a+Time!;Visit+iamdhakrey.dev+for+More!" alt="Typing SVG" />
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=4ECDC4&center=true&vCenter=true&width=600&lines=🚀+Currently+building+SpendLite+ecosystem;💰+Making+finance+management+enjoyable;🦀+Rust+%2B+Go+%2B+TypeScript+%2B+Python;🌐+Check+out+my+work+at+iamdhakrey.dev" alt="Secondary Typing SVG" />
 </div>
 
 ---
@@ -32,6 +36,11 @@
 <div align="left">
   <img src="https://img.shields.io/badge/🚀_Status-Live_&_Deployed-00D4AA?style=flat-square" />
   <img src="https://img.shields.io/badge/⭐_Users-Growing_Fast-FFD93D?style=flat-square" />
+  <img src="https://img.shields.io/badge/🌐_Visit-iamdhakrey.dev-A855F7?style=flat-square" />
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2000&pause=1000&color=FFD93D&center=true&vCenter=true&width=600&lines=🏦+Revolutionizing+personal+finance;💳+Secure+transaction+management;📊+Real-time+expense+tracking;🔄+Live+at+spendlite.iamdhakrey.dev" alt="SpendLite Features" />
 </div>
 
 **🏗️ [spendlite-api](https://github.com/iamdhakrey/spendlite-api)** - The Financial Engine
@@ -99,6 +108,29 @@
 
 </div>
 
+### **Interactive Skill Levels**
+<div align="center">
+
+```text
+🦀 Rust         ████████████████████████████████████████ 90%
+🐹 Go           ████████████████████████████████████████ 85%
+🐍 Python       ████████████████████████████████████████ 80%
+⚡ TypeScript   ████████████████████████████████████████ 88%
+⚛️ React        ████████████████████████████████████████ 82%
+🗄️ PostgreSQL   ████████████████████████████████████████ 75%
+🐳 Docker       ████████████████████████████████████████ 70%
+🔧 Tauri        ████████████████████████████████████████ 85%
+```
+
+<img src="https://skillicons.dev/icons?i=rust,go,python,typescript,react,postgres,docker,tauri&theme=dark" />
+
+</div>
+
+### **Live Development Status**
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2500&pause=1500&color=00D4AA&center=true&vCenter=true&width=500&lines=💻+Currently+coding+in+Rust;🚀+Deploying+to+iamdhakrey.dev;🔄+Updating+SpendLite+features;🔧+Optimizing+performance;📊+Analyzing+user+feedback" alt="Live Status" />
+</div>
+
 ---
 
 ## 🎨 **My Superpowers**
@@ -139,6 +171,15 @@
 
 ### 📈 Contribution Graph
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=iamdhakrey&theme=github-compact)
+
+### 🔥 Recent Activity & Achievements
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=iamdhakrey&theme=react-dark&hide_border=true&area=true" alt="Contribution Graph" />
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2200&pause=1200&color=4ECDC4&center=true&vCenter=true&width=700&lines=🌟+Building+amazing+projects+daily;🚀+Contributing+to+open+source;💡+Always+learning+new+technologies;🔗+Connect+with+me+at+iamdhakrey.dev" alt="Activity Status" />
+</div>
 ---
 
 ## 📊 **The Numbers Don't Lie**
@@ -161,33 +202,49 @@
 ## 🌟 **Live Projects You Can Try Right Now!**
 
 <div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3000&pause=1500&color=FF6B6B&center=true&vCenter=true&width=800&lines=🌐+All+projects+deployed+at+iamdhakrey.dev;🚀+Click+and+explore+live+applications;💻+Built+with+modern+tech+stack;⚡+Fast%2C+secure%2C+and+user-friendly" alt="Live Projects" />
+</div>
+
+<div align="center">
   <table>
     <tr>
       <td align="center">
         <a href="https://api.spendlite.iamdhakrey.dev">
           <img src="https://img.shields.io/badge/🚀_SpendLite_API-Try_Now-00D4AA?style=for-the-badge" />
         </a><br/>
-        <sub>RESTful Finance API</sub>
+        <sub>RESTful Finance API</sub><br/>
+        <img src="https://img.shields.io/badge/Status-🟢_Online-success?style=flat-square" />
       </td>
       <td align="center">
         <a href="https://spendlite.iamdhakrey.dev">
           <img src="https://img.shields.io/badge/💻_Desktop_App-Download-4ECDC4?style=for-the-badge" />
         </a><br/>
-        <sub>Cross-Platform Finance Manager</sub>
+        <sub>Cross-Platform Finance Manager</sub><br/>
+        <img src="https://img.shields.io/badge/Status-🟢_Active-success?style=flat-square" />
       </td>
       <td align="center">
         <a href="https://iamdhakrey.dev">
           <img src="https://img.shields.io/badge/🌐_Portfolio-Explore-A855F7?style=for-the-badge" />
         </a><br/>
-        <sub>Personal Website</sub>
+        <sub>Personal Website</sub><br/>
+        <img src="https://img.shields.io/badge/Status-🟢_Live-success?style=flat-square" />
       </td>
     </tr>
   </table>
 </div>
 
+### 🎯 **Interactive Project Showcase**
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=A855F7&center=true&vCenter=true&width=750&lines=🔧+SpendLite%3A+Personal+finance+made+simple;📸+PhotoBooth%3A+Professional+event+automation;🧩+Sudoku+Solver%3A+Rust-powered+puzzle+engine;🌐+All+hosted+on+iamdhakrey.dev+infrastructure" alt="Project Showcase" />
+</div>
+
 ---
 
 ## 🤝 **Let's Connect & Build Something Amazing!**
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=1500&color=45B7D1&center=true&vCenter=true&width=800&lines=🤝+Let's+collaborate+on+exciting+projects;💬+Always+open+to+new+opportunities;🌐+Find+me+across+the+web;📧+Reach+out+through+iamdhakrey.dev" alt="Connect" />
+</div>
 
 <div align="center">
   <a href="https://www.linkedin.com/in/iamdhakrey">
@@ -198,7 +255,14 @@
   </a>&nbsp;&nbsp;
   <a href="https://www.instagram.com/iamdhakrey">
     <img src="https://img.shields.io/badge/Instagram-📸_Behind_Scenes-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>&nbsp;&nbsp;
+  <a href="https://iamdhakrey.dev">
+    <img src="https://img.shields.io/badge/Website-🌐_Portfolio-FF6B6B?style=for-the-badge&logo=firefox&logoColor=white" />
   </a>
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2000&pause=1000&color=4ECDC4&center=true&vCenter=true&width=600&lines=📱+Follow+for+daily+coding+updates;🚀+Join+me+in+building+the+future;💡+Share+your+project+ideas;🔗+Visit+iamdhakrey.dev+for+more!" alt="Social CTA" />
 </div>
 
 ---
@@ -213,9 +277,14 @@
 
 ## 🚀 **Fun Facts That Make Me, Me!**
 
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1500&color=FFD93D&center=true&vCenter=true&width=700&lines=🎯+Building+the+future+with+code;🔧+Hardware+meets+software+magic;💰+Making+finance+fun+%26+accessible;🌐+Showcasing+everything+at+iamdhakrey.dev" alt="Fun Facts" />
+</div>
+
 ```typescript
 const dhakrey = {
     pronouns: "he/him",
+    location: "🌍 Building globally, hosted on iamdhakrey.dev",
     code: ["Go", "Rust", "TypeScript", "Python"],
     askMeAbout: ["FinTech", "Desktop Apps", "Hardware Integration", "Performance"],
     technologies: {
@@ -223,25 +292,39 @@ const dhakrey = {
         frontend: ["React", "TypeScript", "Tauri"],
         devOps: ["Docker", "GitHub Actions", "Linux"],
         databases: ["PostgreSQL", "SQLite"],
-        hardware: ["libgphoto2", "Camera Control", "Printer Integration"]
+        hardware: ["libgphoto2", "Camera Control", "Printer Integration"],
+        deployment: ["iamdhakrey.dev infrastructure", "CI/CD pipelines"]
     },
     currentFocus: "Building the SpendLite ecosystem 💰",
-    funFact: "I make computers talk to cameras and printers! 📸🖨️"
+    funFact: "I make computers talk to cameras and printers! 📸🖨️",
+    websiteStatus: "🟢 iamdhakrey.dev - Always online!",
+    motto: "Code is poetry, and I'm writing symphonies! 🎵"
 };
 ```
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2200&pause=1200&color=4ECDC4&center=true&vCenter=true&width=600&lines=🎪+Making+tech+accessible+and+fun;🚀+Open+source+enthusiast;💡+Always+learning+and+growing;🔗+Everything+documented+at+iamdhakrey.dev" alt="More Fun Facts" />
+</div>
 
 <div align="center">
   
 **🎯 Currently working on:** *Making personal finance management actually enjoyable*  
 **🌱 Learning:** *Advanced Rust patterns & WebAssembly magic*  
-**💡 Ask me about:** *Anything from Rust performance to Go/Python APIs to hardware automation*
+**💡 Ask me about:** *Anything from Rust performance to Go/Python APIs to hardware automation*  
+**🌐 Website:** *Visit [iamdhakrey.dev](https://iamdhakrey.dev) for live demos and more projects*
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3500&pause=2000&color=A855F7&center=true&vCenter=true&width=800&lines=🌟+Thanks+for+visiting+my+profile!;🚀+Check+out+my+projects+at+iamdhakrey.dev;💜+Let's+build+something+amazing+together;🔥+Always+shipping+new+features!" alt="Footer Message" />
+</div>
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=40&fontColor=fff&animation=twinkling"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer&text=Visit%20iamdhakrey.dev&fontSize=35&fontColor=fff&animation=twinkling"/>
 
-**⭐️ From [iamdhakrey](https://github.com/iamdhakrey) with 💜**
+**⭐️ From [iamdhakrey](https://github.com/iamdhakrey) with 💜 | 🌐 [iamdhakrey.dev](https://iamdhakrey.dev)**
 
-*"Building the future, one commit at a time!"*
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1500&color=FF6B6B&center=true&vCenter=true&width=600&lines=Building+the+future%2C+one+commit+at+a+time!;🌐+Explore+more+at+iamdhakrey.dev;🚀+Let's+connect+and+collaborate!" alt="Final CTA" />
+</div>
 
 </div>
