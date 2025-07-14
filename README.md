@@ -6,6 +6,11 @@
 [![GitHub followers](https://img.shields.io/github/followers/iamdhakrey?label=🤝_Follow_Me&style=for-the-badge&color=4ECDC4)](https://github.com/iamdhakrey)
 [![Profile Views](https://komarev.com/ghpvc/?username=iamdhakrey&color=45B7D1&style=for-the-badge&label=👀_Profile_Views)](https://github.com/iamdhakrey)
 
+### 🕐 **Live Status Dashboard**
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=1500&pause=500&color=00D4AA&center=true&vCenter=true&width=700&lines=🟢+iamdhakrey.dev+-+Online+%26+Active;🚀+Actively+developing+new+features;💻+Coding+session+in+progress;🔄+Continuous+deployment+active" alt="Live Status" />
+</div>
+
 </div>
 
 <div align="center">
@@ -185,12 +190,24 @@
 ## 📊 **The Numbers Don't Lie**
 
 <div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=2500&pause=1500&color=A855F7&center=true&vCenter=true&width=800&lines=📈+Real-time+GitHub+analytics;🏆+Achievements+unlocked+daily;💪+Continuous+improvement+mindset;🌐+Building+at+iamdhakrey.dev" alt="Stats Header" />
+</div>
+
+<div align="center">
   <img width="390" src="https://github-readme-stats-sigma-five.vercel.app/api?username=iamdhakrey&show_icons=true&count_private=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A855F7&icon_color=4ECDC4&text_color=C9D1D9" alt="Dhakrey's GitHub Stats" />
   <img width="390" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=iamdhakrey&exclude_repo=Python,kernel_xioami_zizuhu_ysl,kernel_xiaomi_cannon,pycord&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=A855F7&text_color=C9D1D9" alt="Top Languages" />
 </div>
 
 <div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2000&pause=1000&color=4ECDC4&center=true&vCenter=true&width=600&lines=🔥+Streak+powered+by+daily+commits;💡+Languages+evolving+constantly;📊+Stats+updated+in+real-time;🎯+Goals%3A+10k+commits+this+year" alt="Stats Commentary" />
+</div>
+
+<div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=iamdhakrey&theme=tokyonight&hide_border=true&background=0D1117&stroke=A855F7&ring=4ECDC4&fire=FF6B6B&currStreakLabel=C9D1D9" alt="GitHub Streak" />
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=12&duration=1800&pause=800&color=FFD93D&center=true&vCenter=true&width=500&lines=🏆+Trophies+earned+through+dedication;⭐+Quality+over+quantity;🚀+Always+aiming+higher;💼+Professional+portfolio+at+iamdhakrey.dev" alt="Trophy Commentary" />
 </div>
 
 <div align="center">
@@ -270,7 +287,15 @@
 ## 💭 **Random Dev Wisdom**
 
 <div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=3000&pause=1500&color=45B7D1&center=true&vCenter=true&width=700&lines=💡+Daily+inspiration+for+developers;🧠+Wisdom+from+the+coding+trenches;🎯+Motivation+to+keep+building;🌟+Fresh+quotes+every+visit" alt="Wisdom Intro" />
+</div>
+
+<div align="center">
   <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" alt="Random Dev Quote" />
+</div>
+
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2500&pause=1200&color=4ECDC4&center=true&vCenter=true&width=600&lines=🔄+Refresh+for+new+wisdom;💪+Code+with+purpose;🚀+Never+stop+learning;🌐+More+inspiration+at+iamdhakrey.dev" alt="Wisdom Footer" />
 </div>
 
 ---
