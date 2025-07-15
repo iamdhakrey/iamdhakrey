@@ -174,8 +174,6 @@
   </table>
 </div>
 
-### 📈 Contribution Graph
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=iamdhakrey&theme=github-compact)
 
 ### 🔥 Recent Activity & Achievements
 <div align="center">
