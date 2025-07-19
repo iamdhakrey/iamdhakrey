@@ -18,7 +18,7 @@
 </div>
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=4ECDC4&center=true&vCenter=true&width=600&lines=🚀+Currently+building+SpendLite+ecosystem;💰+Making+finance+management+enjoyable;🦀+Rust+%2B+Go+%2B+TypeScript+%2B+Python;🌐+Check+out+my+work+at+iamdhakrey.dev" alt="Secondary Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&duration=3000&pause=1000&color=4ECDC4&center=true&vCenter=true&width=600&lines=🚀+Currently+building+SpendLite+ecosystem;💰+Making+finance+management+enjoyable;🌐+Powering+iamdhakrey.dev+with+terminal-portfolio;🦀+Rust+%2B+Go+%2B+TypeScript+%2B+Python;🤖+Building+rustycord+Discord+library" alt="Secondary Typing SVG" />
 </div>
 
 ---
@@ -27,14 +27,26 @@
 
 > *"Code is poetry, and I'm writing symphonies in Rust, Go, Python, and TypeScript"* 🎵
 
-### 🧩 **Sudoku Solver** - Rust Library
-**[Sudoko Solver](https://github.com/iamdhakrey/sudoko)** - Solve Sudoku puzzle library in Rust  
+### 🌐 **Terminal Portfolio** - Modern Developer Experience
+**[Terminal Portfolio](https://github.com/iamdhakrey/terminal-portfolio)** - Terminal-style portfolio website that powers iamdhakrey.dev
+```typescript
+// Where coding meets creativity!
+🔹 Fully configurable through single config file
+🔹 React + TypeScript for modern development
+🔹 Terminal-style interface for unique experience
+🔹 Perfect template for developers
+🔹 🌐 Live at: iamdhakrey.dev
+```
+
+### 🧩 **Sudoko Solver** - Advanced Puzzle Engine
+**[Sudoko](https://github.com/iamdhakrey/Sudoko)** - Comprehensive Rust library for solving puzzles of various sizes
 ```rust
-// Classic puzzle, smart solution!
-🔹 solving puzzles
-🔹 Clean Rust codebase
+// Advanced puzzle solving with multiple strategies!
+🔹 Supports 3x3, 4x4, 5x5 and more puzzle sizes
+🔹 Multiple solving algorithms and strategies
 🔹 WASM & TUI support for integration
-🔹 Open source & easy to contribute
+🔹 Published on crates.io
+🔹 Clean, modular Rust architecture
 ```
 
 ### 💰 **SpendLite** - Personal Finance Revolution
@@ -81,10 +93,25 @@
 🔹 Zero-latency photo processing
 ```
 
+### 🤖 **Rustycord** - Discord Bot Library
+<div align="left">
+  <img src="https://img.shields.io/badge/🦀_Language-Rust-CE422B?style=flat-square" />
+  <img src="https://img.shields.io/badge/🌐_Website-rustycord.iamdhakrey.dev-A855F7?style=flat-square" />
+</div>
+
+**[Rustycord](https://github.com/iamdhakrey/rustycord)** - Fast, lightweight Discord bot library
+```rust
+// Discord development, reimagined in Rust
+🔹 High-performance Discord API wrapper
+🔹 Feature-rich and developer-friendly
+🔹 Built for speed and reliability
+🔹 🌐 Docs at: rustycord.iamdhakrey.dev
+```
+
 ### 🦀 **The Rust Collection** - System Programming Mastery
 ```rust
 // Building the future with memory safety
-🔹 rustcord     → Discord reimagined in Rust
+🔹 rustycord    → Discord bot library, blazingly fast
 🔹 compress     → File compression, blazingly fast
 🔹 rust-test-api → Testing frameworks done right
 ```
@@ -133,7 +160,7 @@
 
 ### **Live Development Status**
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2500&pause=1500&color=00D4AA&center=true&vCenter=true&width=500&lines=💻+Currently+coding+in+Rust;🚀+Deploying+to+iamdhakrey.dev;🔄+Updating+SpendLite+features;🔧+Optimizing+performance;📊+Analyzing+user+feedback" alt="Live Status" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2500&pause=1500&color=00D4AA&center=true&vCenter=true&width=500&lines=💻+Currently+coding+terminal-portfolio;🚀+Deploying+to+iamdhakrey.dev;🤖+Enhancing+rustycord+features;🔄+Updating+SpendLite+ecosystem;🧩+Solving+complex+puzzles;📊+Analyzing+user+feedback" alt="Live Status" />
 </div>
 
 ---
@@ -250,7 +277,7 @@
 
 ### 🎯 **Interactive Project Showcase**
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=A855F7&center=true&vCenter=true&width=750&lines=🔧+SpendLite%3A+Personal+finance+made+simple;📸+PhotoBooth%3A+Professional+event+automation;🧩+Sudoku+Solver%3A+Rust-powered+puzzle+engine;🌐+All+hosted+on+iamdhakrey.dev+infrastructure" alt="Project Showcase" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1000&color=A855F7&center=true&vCenter=true&width=750&lines=🔧+SpendLite%3A+Personal+finance+made+simple;🌐+Terminal+Portfolio%3A+Modern+developer+experience;📸+PhotoBooth%3A+Professional+event+automation;🤖+Rustycord%3A+Fast+Discord+bot+library;🧩+Sudoko%3A+Advanced+puzzle+solving+engine;🌐+All+hosted+on+iamdhakrey.dev+infrastructure" alt="Project Showcase" />
 </div>
 
 ---
@@ -301,7 +328,7 @@
 ## 🚀 **Fun Facts That Make Me, Me!**
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1500&color=FFD93D&center=true&vCenter=true&width=700&lines=🎯+Building+the+future+with+code;🔧+Hardware+meets+software+magic;💰+Making+finance+fun+%26+accessible;🌐+Showcasing+everything+at+iamdhakrey.dev" alt="Fun Facts" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=2500&pause=1500&color=FFD93D&center=true&vCenter=true&width=700&lines=🎯+Building+the+future+with+code;🔧+Hardware+meets+software+magic;💰+Making+finance+fun+%26+accessible;🌐+Terminal+portfolio+powering+iamdhakrey.dev;🤖+Crafting+Discord+bots+in+Rust" alt="Fun Facts" />
 </div>
 
 ```typescript
@@ -309,7 +336,7 @@ const dhakrey = {
     pronouns: "he/him",
     location: "🌍 Building globally, hosted on iamdhakrey.dev",
     code: ["Go", "Rust", "TypeScript", "Python"],
-    askMeAbout: ["FinTech", "Desktop Apps", "Hardware Integration", "Performance"],
+    askMeAbout: ["FinTech", "Desktop Apps", "Hardware Integration", "Discord Bots", "Terminal UIs"],
     technologies: {
         backend: ["Go + Echo", "Rust", "Python", "PostgreSQL"],
         frontend: ["React", "TypeScript", "Tauri"],
@@ -318,8 +345,8 @@ const dhakrey = {
         hardware: ["libgphoto2", "Camera Control", "Printer Integration"],
         deployment: ["iamdhakrey.dev infrastructure", "CI/CD pipelines"]
     },
-    currentFocus: "Building the SpendLite ecosystem 💰",
-    funFact: "I make computers talk to cameras and printers! 📸🖨️",
+    currentFocus: "Building terminal-portfolio & rustycord ecosystem 🌐🤖",
+    funFact: "I make computers talk to cameras, printers, and Discord! 📸🖨️💬",
     websiteStatus: "🟢 iamdhakrey.dev - Always online!",
     motto: "Code is poetry, and I'm writing symphonies! 🎵"
 };
@@ -331,7 +358,7 @@ const dhakrey = {
 
 <div align="center">
   
-**🎯 Currently working on:** *Making personal finance management actually enjoyable*  
+**🎯 Currently working on:** *Terminal portfolio experience & rustycord Discord library*  
 **🌱 Learning:** *Advanced Rust patterns & WebAssembly magic*  
 **💡 Ask me about:** *Anything from Rust performance to Go/Python APIs to hardware automation*  
 **🌐 Website:** *Visit [iamdhakrey.dev](https://iamdhakrey.dev) for live demos and more projects*
