@@ -211,8 +211,18 @@
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=14&duration=2200&pause=1200&color=4ECDC4&center=true&vCenter=true&width=700&lines=🌟+Building+amazing+projects+daily;🚀+Contributing+to+open+source;💡+Always+learning+new+technologies;🔗+Connect+with+me+at+iamdhakrey.dev" alt="Activity Status" />
 </div>
+
 ---
 
+## 📈 Contribution Graph
+
+<div align="center">
+
+![Snake animation](https://github.com/iamdhakrey/iamdhakrey/blob/output/github-contribution-grid-snake.svg)
+
+</div>
+
+--- 
 ## 📊 **The Numbers Don't Lie**
 
 <div align="center">
