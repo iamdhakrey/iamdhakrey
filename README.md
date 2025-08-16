@@ -6,8 +6,6 @@
 [![GitHub followers](https://img.shields.io/github/followers/iamdhakrey?label=🤝_Follow_Me&style=for-the-badge&color=4ECDC4)](https://github.com/iamdhakrey)
 [![Profile Views](https://komarev.com/ghpvc/?username=iamdhakrey&color=45B7D1&style=for-the-badge&label=👀_Profile_Views)](https://github.com/iamdhakrey)
 
-
-
 ### 🕐 **Live Status Dashboard**
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=16&duration=1500&pause=500&color=00D4AA&center=true&vCenter=true&width=700&lines=🟢+iamdhakrey.dev+-+Online+%26+Active;🚀+Actively+developing+new+features;💻+Coding+session+in+progress;🔄+Continuous+deployment+active" alt="Live Status" />
