@@ -153,6 +153,11 @@
 🔧 Tauri        ████████████████████████████████████████ 85%
 ```
 <!--START_SECTION:waka-->
+
+```txt
+No activity tracked
+```
+
 <!--END_SECTION:waka-->
 
 <img src="https://skillicons.dev/icons?i=rust,go,python,typescript,react,postgres,docker,tauri&theme=dark" />
