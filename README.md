@@ -9,7 +9,7 @@
 
 ---
 
-## 🚀 Current Focus
+## Current Focus
 
 Leading product development at **Netweb Technologies** while building:
 
@@ -22,11 +22,11 @@ Leading product development at **Netweb Technologies** while building:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Languages:** Rust • Go • Python • TypeScript
 
-**Backend:** Go (Echo) • Rust • Python (Celery, Taskiq) • PostgreSQL
+**Backend:** Go (Echo) • Rust • Python (FastAPI, Celery, Taskiq) • PostgreSQL
 
 **Frontend:** React • TypeScript • Tauri
 
@@ -36,7 +36,7 @@ Leading product development at **Netweb Technologies** while building:
 
 ---
 
-## 📦 Key Projects
+## Key Projects
 
 ### [SpendLite](https://spendlite.iamdhakrey.dev)
 Personal finance management • Go + PostgreSQL backend • Tauri desktop app
@@ -55,14 +55,14 @@ Professional event automation • Camera control • Hardware integration
 
 ---
 
-## 📊 GitHub Stats
+## GitHub Stats
 
 ![Stats](https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117)
 ![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=iamdhakrey&layout=compact&theme=dark&hide_border=true&bg_color=0d1117)
 
 ---
 
-## 🤝 Connect
+## Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/iamdhakrey)
 [![Telegram](https://img.shields.io/badge/Telegram-Chat-2CA5E0?style=flat-square&logo=telegram)](https://t.me/iamdhakrey)
