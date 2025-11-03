@@ -13,7 +13,6 @@
 
 Leading product development at **Netweb Technologies** while building:
 
-- **Go libvirt** - Cloud infrastructure & virtualization
 - **HPC Stack** - PBS (Portable Batch System) • NFS • Distributed computing
 - **Python Celery & Taskiq** - Distributed task processing
 - **SpendLite** - Personal finance ecosystem ([api](https://github.com/iamdhakrey/spendlite-api) | [desktop](https://github.com/iamdhakrey/spendlite))
