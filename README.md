@@ -59,8 +59,10 @@ Professional event automation • Camera control • Hardware integration
 ![Stats](https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117)
 ![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=iamdhakrey&layout=compact&theme=dark&hide_border=true&bg_color=0d1117)
 ![TryHackMeStats]("https://tryhackme-badges.s3.amazonaws.com/iamdhakrey.png")
-
-
+...
+# Blog posts
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 ---
 
 ## Connect
