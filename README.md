@@ -62,6 +62,11 @@ Professional event automation • Camera control • Hardware integration
 ...
 # Blog posts
 <!-- BLOG-POST-LIST:START -->
+- [Load Balancing: Distributing Traffic Like a Pro](https://blogs.iamdhakrey.dev/blog/system-design-load-balancing-distributing-traffic/)
+- [The Complete Guide to Application Scalability: When Your App Outgrows Its Server](https://blogs.iamdhakrey.dev/blog/system-design-scalability-and-performance/)
+- [System Design Fundamentals: What Every Developer Must Know](https://blogs.iamdhakrey.dev/blog/system-design-fundamentals-what-every-developer-must-know/)
+- [Linux Kernel Modules and System Tuning: Day 22 - The Engine Under the Hood](https://blogs.iamdhakrey.dev/blog/linux-kernel-modules-system-tuning/)
+- [Docker for Backend Developers: Part 5 - Production Deployment Strategies](https://blogs.iamdhakrey.dev/blog/docker-part-5-production-deployment/)
 <!-- BLOG-POST-LIST:END -->
 ---
 
