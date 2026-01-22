@@ -57,7 +57,13 @@ Professional event automation • Camera control • Hardware integration
 ## GitHub Stats
 ![Stats](https://github-readme-stats-trinibs-projects.vercel.app/api?username=iamdhakrey&show_icons=true&theme=dark&hide_border=true&bg_color=0d1117)
 ![Languages](https://github-readme-stats-trinibs-projects.vercel.app/api/top-langs/?username=iamdhakrey&layout=compact&theme=dark&hide_border=true&bg_color=0d1117)
-![TryHackMeStats]("https://tryhackme-badges.s3.amazonaws.com/iamdhakrey.png")
+<a href="https://tryhackme.com/p/iamdhakrey">
+  <img src="https://tryhackme-badges.s3.amazonaws.com/iamdhakrey.png" width="350"/>
+</a>
+<a href="https://app.daily.dev/iamdhakrey">
+  <img src="https://api.daily.dev/devcards/v2/wvWctqp3N1DJa5AiG1M5K.png?type=wide&r=7fp" width="350"/>
+</a>
+
 ...
 # Blog posts
 <!-- BLOG-POST-LIST:START -->
