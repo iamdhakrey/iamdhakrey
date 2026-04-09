@@ -86,6 +86,8 @@ Contributing to popular Python and backend projects:
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=iamdhakrey&theme=radical&hide_border=true)
 
+![GitHub Streak](https://raw.githubusercontent.com/iamdhakrey/iamdhakrey/refs/heads/output/github-contribution-grid-snake.svg)
+
 </div>
 
 ## Certifications
