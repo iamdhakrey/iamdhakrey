@@ -61,11 +61,11 @@ Interactive terminal-style portfolio website showcasing projects and skills
 ## Latest Blog Posts
 
 <!-- BLOG-POST-LIST:START -->
+- [Caching Strategies: Making Your System Lightning Fast](https://blogs.iamdhakrey.dev/blog/system-design-caching-strategies/)
 - [Contributing to Kibi: Adding a Comment Toggle Feature](https://blogs.iamdhakrey.dev/blog/kibi-toggle-comment-contribution/)
 - [Database Design Patterns: Choosing the Right Data Store](https://blogs.iamdhakrey.dev/blog/system-design-database-design-patterns/)
 - [Load Balancing: Distributing Traffic Like a Pro](https://blogs.iamdhakrey.dev/blog/system-design-load-balancing-distributing-traffic/)
 - [The Complete Guide to Application Scalability: When Your App Outgrows Its Server](https://blogs.iamdhakrey.dev/blog/system-design-scalability-and-performance/)
-- [System Design Fundamentals: What Every Developer Must Know](https://blogs.iamdhakrey.dev/blog/system-design-fundamentals-what-every-developer-must-know/)
 <!-- BLOG-POST-LIST:END -->
 
 ## Open Source Contributions
