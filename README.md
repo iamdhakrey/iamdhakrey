@@ -9,6 +9,7 @@
 
 </div>
 
+
 ## About Me
 
 Senior Python Backend Developer with **6 years** of software engineering experience, specializing in building **scalable microservices** and **high-performance APIs**. Currently leading backend architecture at Netweb Technologies.
