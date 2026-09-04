@@ -81,10 +81,12 @@ Contributing to popular Python and backend projects:
 ## GitHub Stats
 
 <div align="center">
-  
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=iamdhakrey&show_icons=true&theme=radical&hide_border=true&count_private=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=iamdhakrey&layout=compact&theme=radical&hide_border=true)
+
+  
+![GitHub Stats](https://github-stats-extended.vercel.app/api?username=iamdhakrey&show_icons=true&theme=radical&hide_border=true&count_private=true)
+
+![Top Languages](https://github-stats-extended.vercel.app/api/top-langs/?username=iamdhakrey&layout=compact&theme=radical&hide_border=true)
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=iamdhakrey&theme=radical&hide_border=true)
 
