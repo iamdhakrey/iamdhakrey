@@ -53,6 +53,10 @@ Senior Python Backend Developer with **6 years** of software engineering experie
 
 ## Featured Projects
 
+### [Veyak - API Client](https://github.com/iamdhakrey/veyak) 
+The Blazing-Fast, Lightweight, Native Multi-Protocol API Client.
+- [**Download**](https://github.com/iamdhakrey/veyak/releases)
+
 ### [SpendLite - Personal Finance Management API](https://github.com/iamdhakrey/spendlite-api) 
 Complete REST API built with **Go**, **Echo**, and **PostgreSQL** featuring:
 - **Live Demo:** [spendlite.iamdhakrey.dev](https://spendlite.iamdhakrey.dev)
